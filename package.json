@@ -1,0 +1,20 @@
+{
+  "name": "newblog-angular-7",
+  "version": "1.0.0",
+  "description": "blog avec nodejs et angular",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build": "cd client && ng build --prod --env=prod"
+  },
+  "author": "hubert",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.4.3"
+  }
+}
