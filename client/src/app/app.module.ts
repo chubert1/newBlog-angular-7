@@ -1,3 +1,4 @@
+import { NavComponent } from './components/nav/nav.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -22,9 +23,11 @@ import { NotAuthGuard } from './guards/notAuth.guard';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthService } from './services/auth.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule, MatFormFieldModule, MatInputModule, MatOptionModule} from '@angular/material';
+import { MatToolbarModule, MatInputModule, MatOptionModule} from '@angular/material';
 import { MatSelectModule, MatIconModule, MatButtonModule, MatCardModule} from '@angular/material';
 import { MatTableModule, MatDividerModule, MatSnackBarModule } from '@angular/material';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MaterialModule} from './material.module';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,8 @@ import { MatTableModule, MatDividerModule, MatSnackBarModule } from '@angular/ma
     NavbarComponent,
     ProfileComponent,
     PublicProfileComponent,
-    RegisterComponent
+    RegisterComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +62,8 @@ import { MatTableModule, MatDividerModule, MatSnackBarModule } from '@angular/ma
     MatCardModule,
     MatTableModule,
     MatDividerModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+     MaterialModule
   ],
   providers: [AuthService, AuthGuard, NotAuthGuard, BlogService],
   bootstrap: [AppComponent]

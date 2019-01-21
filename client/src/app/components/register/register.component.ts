@@ -18,12 +18,17 @@ export class RegisterComponent implements OnInit {
   emailMessage;
   usernameValid;
   usernameMessage;
+  options: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private router: Router
   ) {
+    this.options = formBuilder.group({
+      hideRequired: false,
+      floatLabel: 'auto',
+    });
     this.createForm(); // Create Angular 2 Form when component loads
   }
 

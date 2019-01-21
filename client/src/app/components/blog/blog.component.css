@@ -44,3 +44,40 @@
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
 }
+.blog-content {
+  padding: 60px 1rem;
+}
+.formulaireRegister {
+
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.mat-card-actions {
+  margin-top: 5%;
+  margin-right: 40%;
+
+}
+mat-card {
+  max-width: 800px;
+  margin: 2em auto;
+  text-align: center;
+}
+.full-width-input {
+  width: 100%;
+}
+
+.mat-card-header { justify-content: center; }
+
+mat-icon.badgeLove {
+  padding-left: 40px;
+  padding-right: 40px;
+  color:red;
+}
+mat-icon.badgeDislike {
+  padding-left: 40px;
+  padding-right: 40px;
+  color:black;
+}
+.spacer {
+  margin-left: 5px;
+}

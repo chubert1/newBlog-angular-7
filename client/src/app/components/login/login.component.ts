@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   processing = false;
   form;
   previousUrl;
+  options: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -22,6 +23,10 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private authGuard: AuthGuard
   ) {
+    this.options = formBuilder.group({
+      hideRequired: false,
+      floatLabel: 'auto',
+    });
     this.createForm(); // Create Login Form when component is constructed
   }
 

@@ -1,5 +1,28 @@
-/* Remplacez 123px par la taille de votre choix */
-  .navbar-header {
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 120px;
+  background-color: cornflowerblue;
+  color: aliceblue;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+  
+}
+
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.hidden {
+  display: none;
+}
+.navbar-header {
   float: none;
   }
   .navbar-toggle {
@@ -19,7 +42,7 @@
   .navbar-nav>li {
   float: none;
   }
-  .navbar-nav>li>a {
+  .navbar-nav>li>a.mat-list-item {
   padding-top: 10px;
   padding-bottom: 10px;
   }
@@ -34,4 +57,4 @@
   .collapsing {
   overflow: hidden!important;
   }
-  
+

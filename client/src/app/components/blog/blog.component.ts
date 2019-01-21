@@ -1,6 +1,7 @@
 import { BlogService } from './../../services/blog.service';
 import { AuthService } from './../../services/auth.service';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -20,12 +21,18 @@ export class BlogComponent implements OnInit {
   blogPosts;
   newComment = [];
   enabledComments = [];
-
+  options: FormGroup;
+  panelOpenState = false;
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private blogService: BlogService
+    private blogService: BlogService,
+    private location: Location
   ) {
+    this.options = formBuilder.group({
+      hideRequired: false,
+      floatLabel: 'auto',
+    });
     this.createNewBlogForm(); // Create new blog form on start up
     this.createCommentForm(); // Create form for posting comments on a user's blog post
   }
@@ -46,7 +53,7 @@ export class BlogComponent implements OnInit {
         Validators.maxLength(500),
         Validators.minLength(5)
       ])]
-    })
+    });
   }
 
   // Create form for posting comments
@@ -161,7 +168,8 @@ export class BlogComponent implements OnInit {
 
   // Function to go back to previous page
   goBack() {
-    window.location.reload(); // Clear all variable states
+    // window.location.reload();
+    location.reload(); // Clear all variable states
   }
 
   // Function to get all blogs from the database

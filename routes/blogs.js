@@ -17,6 +17,12 @@ module.exports = (router) => {
       if (!req.body.body) {
         res.json({ success: false, message: 'Blog body is required.' }); // Return error message
       } else {
+        // Check if blog img was provided
+        /*
+        if (!req.body.img) {
+          res.json({ success: false, message: 'Blog img is required.' }); // Return error message
+        } else {
+          */
         // Check if blog's creator was provided
         if (!req.body.createdBy) {
           res.json({ success: false, message: 'Blog creator is required.' }); // Return error
@@ -25,6 +31,7 @@ module.exports = (router) => {
           const blog = new Blog({
             title: req.body.title, // Title field
             body: req.body.body, // Body field
+           // img: req.body.img,
             createdBy: req.body.createdBy // CreatedBy field
           });
           // Save blog into database
